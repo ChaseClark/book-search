@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import Form from './components/Form';
+import React, { Component } from 'react'
+import Form from './components/Form'
 import Books from './components/Books'
-import './App.css'
+import './App.sass'
 
 class App extends Component {
   state = {
@@ -12,7 +12,8 @@ class App extends Component {
     const query = e.target.elements.query.value
     console.log(query)
     e.preventDefault()
-    const api_call = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`) // can modify number of results by adding &maxResults=5
+    // can modify number of results by adding &maxResults=5
+    const api_call = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
     const data = await api_call.json()
     this.setState({
       books: data.items
@@ -22,7 +23,7 @@ class App extends Component {
 
   render () {
     return (
-      <div className="container">
+      <div className="">
         <Form getBook={this.getBook}/>
         <Books books={this.state.books} />
       </div>

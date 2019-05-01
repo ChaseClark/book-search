@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Form from './components/Form'
-import Books from './components/Books'
+import Form from './components/Form/Form'
+import Books from './components/Books/Books'
 import './App.sass'
 
 class App extends Component {
@@ -23,7 +23,7 @@ class App extends Component {
 
   render () {
     return (
-      <div className="">
+      <div className="container">
         <Form getBook={this.getBook}/>
         <Books books={this.state.books} />
       </div>

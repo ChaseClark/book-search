@@ -10,8 +10,8 @@ class App extends Component {
 
   getBook = async (e) => {
     const query = e.target.elements.query.value
-    console.log(query)
     e.preventDefault()
+    if (query === null || query === '') return
     // can modify number of results by adding &maxResults=5
     const api_call = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
     const data = await api_call.json()

@@ -4,7 +4,7 @@ import './Form.sass'
 const Form = props => {
     return (
     <form onSubmit={props.getBook}>
-        <input name="query" type="text"/>
+        <input autoFocus={true} name="query" type="text"/>
         <button type="submit">Search</button>
     </form>
     )

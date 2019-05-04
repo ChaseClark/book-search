@@ -8,7 +8,7 @@ const Books = props => (
         return (
           <div key={book.id} className="preview-card">
                 <img src={(typeof book.volumeInfo.imageLinks === 'undefined') ? imgNotFound : book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title}/>
-                {/* <a href="#">See More</a> */}
+                <a href={book.volumeInfo.canonicalVolumeLink}>See More</a>
           </div>
         )
       })

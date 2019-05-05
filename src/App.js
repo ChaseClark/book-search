@@ -13,7 +13,7 @@ class App extends Component {
     e.preventDefault()
     if (query === null || query === '') return
     // can modify number of results by adding &maxResults=5
-    const api_call = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
+    const api_call = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=40`)
     const data = await api_call.json()
     this.setState({
       books: data.items
